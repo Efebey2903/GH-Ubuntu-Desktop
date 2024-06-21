@@ -16,7 +16,7 @@ jobs:
       - name: Run
         run: |
              sudo apt update -y
-             sudo apt install 
+             sudo apt install xfce4 xfce4-goodies -y
              sudo apt install websockify novnc tigervnc-standalone-server -y
              mkdir ~/.vnc
              wget -O ~/.vnc/xstartup https://github.com/Efebey2903/GH-Ubuntu-Desktop/raw/main/startup
