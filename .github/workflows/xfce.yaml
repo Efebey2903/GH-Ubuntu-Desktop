@@ -1,4 +1,4 @@
-name: Ubuntu VNC
+name: Ubuntu XFCE VNC
 
 on: 
   workflow_dispatch:
