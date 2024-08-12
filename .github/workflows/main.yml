@@ -5,7 +5,7 @@ on:
  
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Getting Updates and Installing Tailscale, Git.
         run: |
@@ -18,6 +18,9 @@ jobs:
              sudo apt update -y
              sudo apt install yaru-theme-gtk yaru-theme-icon -y
              sudo apt install websockify novnc gnome-shell gnome-terminal gnome-tweaks gnome-shell-extensions gnome-shell-extension-ubuntu-dock nautilus nano gedit dbus-x11 tigervnc-standalone-server -y
+             sudo apt-get install build-essential dkms linux-headers-$(uname -r) -y
+             sudo apt-get install virtualbox virtualbox-ext-pack
+             sudo /sbin/vboxconfig
              mkdir ~/.vnc
              wget -O ~/.vnc/xstartup https://github.com/Efebey2903/GH-Ubuntu-Desktop/raw/main/xstartup
              chmod +x /home/runner/.vnc/xstartup
