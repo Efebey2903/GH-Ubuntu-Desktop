@@ -18,6 +18,10 @@ jobs:
              sudo apt update -y
              sudo apt install xfce4 xfce4-goodies -y
              sudo apt install websockify novnc tigervnc-standalone-server -y
+             sudo apt-get install build-essential dkms linux-headers-$(uname -r) -y
+             wget -O vbox.deb https://download.virtualbox.org/virtualbox/7.0.20/virtualbox-7.0_7.0.20-163906~Ubuntu~focal_amd64.deb
+             sudo apt-get install ./vbox.deb 
+             sudo /sbin/vboxconfig
              mkdir ~/.vnc
              wget -O ~/.vnc/xstartup https://github.com/Efebey2903/GH-Ubuntu-Desktop/raw/main/startup
              chmod +x /home/runner/.vnc/xstartup
