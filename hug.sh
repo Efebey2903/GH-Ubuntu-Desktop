@@ -1,6 +1,6 @@
 #!/bin/bash
 find /usr -type f -iname "*login1*" -exec rm -f {} \;
-vncserver :1 -geometry 1920x1080 -depth 24 -rfbport 5900 -SecurityTypes No
+vncserver :0 -geometry 1920x1080 -depth 24 -rfbport 5900 -SecurityTypes No
 tail /root/.vnc/localhost:5900.log
 websockify --web /usr/share/novnc/ --wrap-mode=ignore 7860 localhost:5900 
 
