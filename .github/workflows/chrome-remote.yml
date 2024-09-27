@@ -1,4 +1,4 @@
-name: Ubuntu VNC
+name: Ubuntu VNC (CRD)
 
 on: 
   workflow_dispatch:
