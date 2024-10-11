@@ -1,4 +1,4 @@
-name: Ubuntu VNC (CRD)
+name: SSH
 
 on: 
   workflow_dispatch:
@@ -15,18 +15,5 @@ jobs:
           sudo tailscale up --ssh
       - name: Run
         run: |
-             sudo apt update -y
-             sudo apt install yaru-theme-gtk yaru-theme-icon -y
-             sudo apt install websockify novnc gnome-shell gnome-terminal gnome-tweaks gnome-shell-extensions gnome-shell-extension-ubuntu-dock nautilus nano gedit dbus-x11 tigervnc-standalone-server -y
-             sudo apt-get install build-essential dkms linux-headers-$(uname -r) -y
-             wget -O vbox.deb https://download.virtualbox.org/virtualbox/7.0.20/virtualbox-7.0_7.0.20-163906~Ubuntu~focal_amd64.deb
-             wget -O crd.deb https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
-             sudo apt-get install ./crd.deb
-             sudo apt-get install ./vbox.deb 
-             sudo /sbin/vboxconfig
-             mkdir ~/.vnc
-             wget -O ~/.vnc/xstartup https://github.com/Efebey2903/GH-Ubuntu-Desktop/raw/main/start
-             chmod +x /home/runner/.vnc/xstartup
-             chmod 666 /home/runner/.vnc/xstartup
              wget -O loop.sh https://github.com/Efebey2903/GH-Ubuntu-Desktop/raw/main/loop.sh
              sh loop.sh
